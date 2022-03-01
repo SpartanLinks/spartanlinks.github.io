@@ -61,8 +61,7 @@
                     <div class="um_nav-btn" onclick="search('wolframalpha_mob', 'mobile')">Wolfram</div>
                 </div>
                 <div class="u_nav-right">
-                    <a class="u_nav-link" href="https://ustc.life/">本站网址: <b>spartanlinks.github.io</b></a>
-                    <a href="#" class="u_nav-link" onclick="setHome(this, window.location)">Set Home Page</a>
+                    <a class="u_nav-link" href="https://ustc.life/">You are now on: <b>spartanlinks.github.io</b></a>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -180,30 +179,25 @@
                 </div>
                 <div class="clear"></div>
             </div>
-            <div class="footer">
+<!--             <div class="footer">
                 <a href="https://spartanlinks.github.io/">MSU Navigation</a> is supported by MSU Engineering Graduate Leadership Fellow Program. This project is inspired by <a href="https://ustc.life"> USTCLife </a>.
-            </div>
+            </div> -->
         </div>
+
+<footer class="site-footer">
+    <div class="wrapper">
+        <p class="description">
+            <a href="https://spartanlinks.github.io/">MSU Navigation</a> is supported by MSU Engineering Graduate Leadership Fellow Program. This project is inspired by <a href="https://ustc.life"> USTCLife </a>.
+        </p>
+        <p class="power">
+            College of Engineering, MSU
+        </p>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
     </body>
     <script>
-        var setHome = function(obj, url) {
-            try {
-                obj.style.behavior = 'url(#default#homepage)';
-                obj.setHomePage(url);
-            } catch(e) {
-                if(window.netscape) {
-                    try {
-                        netscape.security.PrivilegeManager.enablePrivilege('UniversalXPConnect');
-                    } catch(e) {
-                        alert('Sorry, the operation is rejected by the browser! \n\nSolution 1:\nPlease enter in the browser address bar:"about:config"\n Then set [signed.applets.codebase_principal_support] value to true。\n\nSolution 2：\nManually set '+url+' as the home page.');
-                    }
-                    var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
-                    prefs.setCharPref('browser.startup.homepage',url);
-                } else {
-                    alert('Sorry, we cannot finish the operation in your browser.\n\n Please manually set ' + url + ' as the home page.');
-                }
-            }
-        };
         var search = function(site, env) {
             var searchId = env === 'pc' ? 'search-pc' : 'search-mobile';
             var baseURL = {
